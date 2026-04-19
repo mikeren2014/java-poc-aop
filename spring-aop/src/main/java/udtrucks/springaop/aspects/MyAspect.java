@@ -6,8 +6,11 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MyAspect {
+    public MyAspect() {
+        System.out.println("MyAspect created");
+    }
     private static final String aopExp = "execution(* " +
-            "udtrucks.springaop.UserServiceImpl.printUser(..)";
+            "udtrucks.springaop.UserServiceImpl.printUser(..))";
 
     @Pointcut(aopExp)
     public void pointCut() {
